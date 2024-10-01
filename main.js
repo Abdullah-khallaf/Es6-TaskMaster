@@ -1,24 +1,24 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+  let task = document.querySelector("#taskinput")
+  
+  let taskbtn = document.querySelector("#addtaskbtn")
+  const tasks = []
+  
+  taskbtn.addEventListener("click", function(e){
+    e.preventDefault()
+    let taskval = task.value
+    tasks.push(taskval)  
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+    task.value = ""
+  })
+
+let storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+let showtaskbtn = document.querySelector("#showtaskbtn")
+
+showtaskbtn.addEventListener("click", function(e){
+  e.preventDefault()
+  console.log(storedTasks);
+  
+})

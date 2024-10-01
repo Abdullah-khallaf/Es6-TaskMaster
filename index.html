@@ -2,13 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Task Master</title>
   </head>
   <body>
-    <h1>Hello world</h1>
-    <div id="app"></div>
+    <div id="app">
+      <form>
+        <div class="input-wrapper">
+          <input type="text" class="taskinput" name="taskinput" id="taskinput" placeholder="add your task" value = "" autofocus>
+          <button id="addtaskbtn" onclick="">Add Task</button>
+        </div>  
+        <div class="tasks-wrapper">
+          <button id="showtaskbtn"> Show Task</button>
+        </div>
+      </form>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
